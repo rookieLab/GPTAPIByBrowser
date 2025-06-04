@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT API via Web Interface",
+  "version": "1.0",
+  "description": "Encapsulate the ChatGPT webpage as a locally callable API (via WebSocket)",
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*",
+    "https://tongyi.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://tongyi.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_title": "ChatGPT API Extension"
+  }
+}
